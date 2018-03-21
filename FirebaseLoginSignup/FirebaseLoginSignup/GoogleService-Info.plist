@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>757372744885-lh8t3pd6rilvtirbpcgjh2mhm0g62000.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.757372744885-lh8t3pd6rilvtirbpcgjh2mhm0g62000</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBeU8XTOQNMRcI6nn6xUk2skI1tg3V3ON4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>757372744885</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.SamboVIsal.FirebaseLogin</string>
+	<key>PROJECT_ID</key>
+	<string>vkclub-ad2f2</string>
+	<key>STORAGE_BUCKET</key>
+	<string>vkclub-ad2f2.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:757372744885:ios:549d46a00176c78d</string>
+	<key>DATABASE_URL</key>
+	<string>https://vkclub-ad2f2.firebaseio.com</string>
+</dict>
+</plist>

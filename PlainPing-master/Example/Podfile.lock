@@ -1,0 +1,16 @@
+PODS:
+  - PlainPing (0.5)
+
+DEPENDENCIES:
+  - PlainPing (from `../`)
+
+EXTERNAL SOURCES:
+  PlainPing:
+    :path: ../
+
+SPEC CHECKSUMS:
+  PlainPing: d4ac43d994ad845c3712596199615b7d44d99641
+
+PODFILE CHECKSUM: c872073517799fa6d1296beb83fdabbff22eff92
+
+COCOAPODS: 1.4.0
