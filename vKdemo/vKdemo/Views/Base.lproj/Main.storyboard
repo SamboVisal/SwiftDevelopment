@@ -46,6 +46,9 @@
                                 <state key="normal" title="Sign In">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rNv-Ad-WBm"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2gi-Pm-5JD">
                                 <rect key="frame" x="90" y="495" width="195" height="35"/>
@@ -81,6 +84,10 @@
                     <navigationItem key="navigationItem" id="USd-n5-KJi">
                         <barButtonItem key="backBarButtonItem" title="Back" id="cV9-8Q-Kag"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="passwordField" destination="984-Yk-gAH" id="fzT-JM-E9L"/>
+                        <outlet property="userNameField" destination="jVC-8a-uMc" id="M9X-nT-oGq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
