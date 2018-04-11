@@ -10,8 +10,20 @@ import UIKit
 import Firebase
 import FBSDKCoreKit
 
+var TimeModCheck = Timer()
+var IN_KIRIROM: String = "IN_KIRIROM"
+var OFF_KIRIROM: String = "OFF_KIRIROM"
+var UNDEFINE_MODE: String = "UNDEFINE MODE"
+var UNDEFINE_LOCATION: String = "UNDEFINED LOCATION"
+var CHECK_USER_LOCATION = ""
 let loginBefore = UserDefaults.standard.bool(forKey: "loginBefore")
 let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+var linephoneInit = "" {
+    didSet{
+        
+    }
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

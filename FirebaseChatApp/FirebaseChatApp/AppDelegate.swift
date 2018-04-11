@@ -9,6 +9,10 @@
 import UIKit
 import PushKit
 import Firebase
+import FirebaseDatabase
+
+var ref: DatabaseReference!
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -19,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch
         window = UIWindow (frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        window?.rootViewController = UINavigationController(rootViewController: ViewController())
+        window?.rootViewController = UINavigationController(rootViewController: MessageController())
         FirebaseApp.configure()
         return true
     }

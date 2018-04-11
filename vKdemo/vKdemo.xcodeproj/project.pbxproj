@@ -33,6 +33,7 @@
 		F6B9960D205BA4B50042515F /* MembershipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B9960C205BA4B50042515F /* MembershipViewController.swift */; };
 		F6B9960F205BB7E00042515F /* SlideBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B9960E205BB7E00042515F /* SlideBarViewController.swift */; };
 		F6C417762058FD4A0025C484 /* AlterMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C417752058FD4A0025C484 /* AlterMessage.swift */; };
+		F6C9A205207DA9540079EF3B /* InternalcallController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C9A204207DA9540079EF3B /* InternalcallController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		F6B9960C205BA4B50042515F /* MembershipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipViewController.swift; sourceTree = "<group>"; };
 		F6B9960E205BB7E00042515F /* SlideBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideBarViewController.swift; sourceTree = "<group>"; };
 		F6C417752058FD4A0025C484 /* AlterMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlterMessage.swift; sourceTree = "<group>"; };
+		F6C9A204207DA9540079EF3B /* InternalcallController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalcallController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 				F60C108B205EB0B90023FCF5 /* ServiceController.swift */,
 				F60C108D205EB0CA0023FCF5 /* AboutController.swift */,
 				F60C108F205EB0D80023FCF5 /* MapController.swift */,
+				F6C9A204207DA9540079EF3B /* InternalcallController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -279,7 +282,6 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/PlainPing/PlainPing.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -289,7 +291,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PlainPing.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,9 +304,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-vKdemo/Pods-vKdemo-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -337,6 +343,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6C9A205207DA9540079EF3B /* InternalcallController.swift in Sources */,
 				F60C1090205EB0D80023FCF5 /* MapController.swift in Sources */,
 				F612D8F5205918A0006DE104 /* SWRevealViewController.m in Sources */,
 				F6A375692056296300EB4BD2 /* ViewController.swift in Sources */,

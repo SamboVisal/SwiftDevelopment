@@ -10,5 +10,6 @@ target 'vKdemo' do
   pod 'Firebase/Auth'
   pod 'FBSDKLoginKit'
   pod 'FBSDKCoreKit'
-  pod "PlainPing"
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
 end

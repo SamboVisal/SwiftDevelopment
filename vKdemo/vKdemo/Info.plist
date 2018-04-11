@@ -59,5 +59,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Allow access to your Microphone, you can talk to your partner by the help of the built-in Mic.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Allow access to your location, you can spot your position on the map.</string>
 </dict>
 </plist>
