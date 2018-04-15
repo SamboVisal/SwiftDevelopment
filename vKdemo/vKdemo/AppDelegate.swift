@@ -10,6 +10,8 @@ import UIKit
 import Firebase
 import FBSDKCoreKit
 
+import PushKit
+
 var TimeModCheck = Timer()
 var IN_KIRIROM: String = "IN_KIRIROM"
 var OFF_KIRIROM: String = "OFF_KIRIROM"
@@ -33,11 +35,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         
-        
+        //registerForPushNotification()
         // FB init
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-        print(loginBefore)
-        print(launchedBefore)
+      
         UIApplication.shared.statusBarStyle = .lightContent
         
         if loginBefore  {
@@ -48,11 +49,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         return true
     }
+    
+    
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         let handled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
         
         return handled
     }
+//    func registerForPushNotification(){
+//        
+//        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+//            print("Permission granted \(granted)")
+//            
+//            guard granted else {return}
+//            self.getNotificationSetting()
+//        }
+//        
+//    }
+//    func getNotificationSetting(){
+//        
+//        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
+//            print("Notification settings \(settings)")
+//            guard settings.authorizationStatus == .authorized else {return}
+//            UIApplication.shared.registerForRemoteNotifications()
+//        }
+//        
+//    }
+//    
+//    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+//        
+//        let tokenPart = deviceToken.map {
+//            data -> String in
+//            return String(format: "%02.2hhx", data)
+//        }
+//        
+//        let token = tokenPart.joined()
+//        print("Device token \(token)")
+//        
+//        
+//        
+//    }
+//    
+//    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+//        print("Failed to register \(error)")
+//    }
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

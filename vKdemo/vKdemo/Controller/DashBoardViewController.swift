@@ -69,7 +69,9 @@ class DashBoardViewController: UIViewController {
         case 2:
             pushView(identifier: "Map")
             break
-        
+        case 3:
+            pushView(identifier: "AboutUs")
+            break
         case 4:
             alterMessage(title: "Coming soon...", msg: "This feature will be available soon!")
             break
@@ -120,7 +122,7 @@ class DashBoardViewController: UIViewController {
             }
             
             revealViewController().rearViewRevealWidth = (view.bounds.width * 80 ) / 100
-            view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            
             
         }
     }

@@ -12,4 +12,6 @@ target 'vKdemo' do
   pod 'FBSDKCoreKit'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  pod 'Firebase/Core'
+  pod 'Firebase/Messaging'
 end

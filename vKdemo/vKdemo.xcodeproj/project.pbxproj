@@ -23,6 +23,7 @@
 		F612D8FF205983F5006DE104 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F612D8FD205983F4006DE104 /* FBSDKLoginKit.framework */; };
 		F62DE0552057731B0068D2A8 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62DE0542057731B0068D2A8 /* ResetPasswordViewController.swift */; };
 		F664ECDD205D399C00612C00 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F664ECDC205D399C00612C00 /* NotificationController.swift */; };
+		F67059E220831DDB00644A24 /* PushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F67059E120831DDB00644A24 /* PushKit.framework */; };
 		F69F166620573EE00070521C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F69F166520573EE00070521C /* RegisterViewController.swift */; };
 		F6A375672056296300EB4BD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A375662056296300EB4BD2 /* AppDelegate.swift */; };
 		F6A375692056296300EB4BD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A375682056296300EB4BD2 /* ViewController.swift */; };
@@ -34,6 +35,7 @@
 		F6B9960F205BB7E00042515F /* SlideBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B9960E205BB7E00042515F /* SlideBarViewController.swift */; };
 		F6C417762058FD4A0025C484 /* AlterMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C417752058FD4A0025C484 /* AlterMessage.swift */; };
 		F6C9A205207DA9540079EF3B /* InternalcallController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C9A204207DA9540079EF3B /* InternalcallController.swift */; };
+		F6D13C9F207EFBC8000803D8 /* AboutUs.json in Resources */ = {isa = PBXBuildFile; fileRef = F6D13C9E207EFBC8000803D8 /* AboutUs.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,7 @@
 		F612D8FD205983F4006DE104 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		F62DE0542057731B0068D2A8 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		F664ECDC205D399C00612C00 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		F67059E120831DDB00644A24 /* PushKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PushKit.framework; path = System/Library/Frameworks/PushKit.framework; sourceTree = SDKROOT; };
 		F69F166520573EE00070521C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F6A375632056296300EB4BD2 /* vKdemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vKdemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6A375662056296300EB4BD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +73,7 @@
 		F6B9960E205BB7E00042515F /* SlideBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideBarViewController.swift; sourceTree = "<group>"; };
 		F6C417752058FD4A0025C484 /* AlterMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlterMessage.swift; sourceTree = "<group>"; };
 		F6C9A204207DA9540079EF3B /* InternalcallController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalcallController.swift; sourceTree = "<group>"; };
+		F6D13C9E207EFBC8000803D8 /* AboutUs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AboutUs.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F67059E220831DDB00644A24 /* PushKit.framework in Frameworks */,
 				2467726452CDF41FA1449748 /* Pods_vKdemo.framework in Frameworks */,
 				F612D8FE205983F4006DE104 /* FBSDKCoreKit.framework in Frameworks */,
 				F612D8FF205983F5006DE104 /* FBSDKLoginKit.framework in Frameworks */,
@@ -98,6 +103,7 @@
 		AEB0104184F17DFF31013E19 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F67059E120831DDB00644A24 /* PushKit.framework */,
 				66F71C21B5E81984CF09EB09 /* Pods_vKdemo.framework */,
 			);
 			name = Frameworks;
@@ -107,7 +113,6 @@
 			isa = PBXGroup;
 			children = (
 				F6A3756F2056296300EB4BD2 /* LaunchScreen.storyboard */,
-				F6A3756D2056296300EB4BD2 /* Assets.xcassets */,
 				F6A3756A2056296300EB4BD2 /* Main.storyboard */,
 			);
 			path = Views;
@@ -172,6 +177,7 @@
 		F6A375652056296300EB4BD2 /* vKdemo */ = {
 			isa = PBXGroup;
 			children = (
+				F6D13C9D207EFBB7000803D8 /* Resource */,
 				F60D2CC4205F3D80002FFACB /* Model */,
 				F60C108A205EACB10023FCF5 /* Views */,
 				F612D8FC205983F4006DE104 /* FBSDKCoreKit.framework */,
@@ -195,6 +201,15 @@
 				F6A3757920562D4800EB4BD2 /* Constant.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		F6D13C9D207EFBB7000803D8 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				F6A3756D2056296300EB4BD2 /* Assets.xcassets */,
+				F6D13C9E207EFBC8000803D8 /* AboutUs.json */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +249,17 @@
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -260,6 +286,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6D13C9F207EFBC8000803D8 /* AboutUs.json in Resources */,
 				F6A375712056296300EB4BD2 /* LaunchScreen.storyboard in Resources */,
 				F6A3756E2056296300EB4BD2 /* Assets.xcassets in Resources */,
 				F6A3756C2056296300EB4BD2 /* Main.storyboard in Resources */,
@@ -282,6 +309,7 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -291,6 +319,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,7 +465,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -487,7 +516,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -501,6 +530,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4J5WG8JLK4;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -512,6 +542,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SamboVIsal.vKdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "vKdemo/vKdemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -525,6 +556,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4J5WG8JLK4;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -536,6 +568,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SamboVIsal.vKdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "vKdemo/vKdemo-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
