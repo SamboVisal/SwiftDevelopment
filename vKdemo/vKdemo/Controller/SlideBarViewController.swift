@@ -34,9 +34,11 @@ class SlideBarViewController: UIViewController {
         let k = CFPlugInGetTypeID().hashValue
         print(k.distance(to: 1))
         if FBSDKAccessToken.current() != nil {
+            UIComponentController.presentActivityIndicator(view: self.view, option: true)
             UserDefaults.standard.set(false, forKey: "loginBefore")
             manager.logOut()
-            UserDefaults.standard.set(false, forKey: "launchBefore")
+            //UserDefaults.standard.set(false, forKey: "launchBefore")
+            
             let DashController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as! ViewController
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             appDelegate.window?.rootViewController = DashController

@@ -10,7 +10,7 @@ import UIKit
 import GoogleMaps
 import CoreData
 import UserNotifications
-import  FirebaseAuth
+import FirebaseAuth
 import Firebase
 
 class DashBoardViewController: UIViewController {
@@ -39,6 +39,8 @@ class DashBoardViewController: UIViewController {
        //sideMenus()
         
         TimeModCheck = Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(self.isKirirom), userInfo: nil, repeats: true)
+        
+        UIComponentController.presentActivityIndicator(view: self.view, option: false)
         kiriromScope.layer.cornerRadius = 5
         kiriromScope.setTitle("Identifying...", for: .normal)
         coverView.isHidden = true
@@ -73,7 +75,8 @@ class DashBoardViewController: UIViewController {
             pushView(identifier: "AboutUs")
             break
         case 4:
-            alterMessage(title: "Coming soon...", msg: "This feature will be available soon!")
+            //alterMessage(title: "Coming soon...", msg: "This feature will be available soon!")
+            NotificationController.presentNotification(title: "Welcome", body: "Enjoy our vKclub buddy...",time: 5.00)
             break
         case 5:
             pushView(identifier: "Internalcall")
@@ -88,8 +91,8 @@ class DashBoardViewController: UIViewController {
    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -131,8 +134,6 @@ class DashBoardViewController: UIViewController {
         sideMenus()
     }
     
-    
-    
     func CheckUserLocation() -> String{
         
         self.locationManager.requestAlwaysAuthorization()
@@ -151,7 +152,6 @@ class DashBoardViewController: UIViewController {
                 if (kiriromscope < 17){
                     lat = currentLocation_lat
                     long = currentLocation_long
-                    
                     return IN_KIRIROM
                 }else{
                     return OFF_KIRIROM
@@ -164,6 +164,7 @@ class DashBoardViewController: UIViewController {
         }
     }
     @objc func isKirirom() {
+        
         CHECK_USER_LOCATION = CheckUserLocation()
         switch CHECK_USER_LOCATION {
         case IN_KIRIROM:
@@ -186,12 +187,14 @@ class DashBoardViewController: UIViewController {
     }
     
     func distanceCal(lat: Double, long: Double) -> Double{
+        
         let dLat : Double = (KIRIROMLAT-lat)*(Double.pi/180)
         let dLon : Double = (KIRIROMLNG-long)*(Double.pi/180)
         let a : Double = sin(dLat/2) * sin(dLat/2) + cos(lat*(Double.pi/180))*cos(KIRIROMLAT*(Double.pi/180)) * sin(dLon/2) * sin(dLon/2);
         let c :Double = 2 * atan2(sqrt(a), sqrt(1-a));
         let d :Double = R * c; // Distance in km
         return d
+    
     }
     
 

@@ -40,6 +40,14 @@ extension UIViewController{
             spinner.removeFromSuperview()
         }
     }
+    func hideKeyboardWhenTypeAround(){
+        let tap: UIGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard(){
+        view.endEditing(true)
+    }
     
 }
 extension UIColor {
@@ -104,4 +112,30 @@ class UIComponentController {
         
         return newImage!
     }
+    static let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+    
+    static func presentActivityIndicator(view: UIView!, option: Bool){
+        if option{
+            
+            let opacityView: UIView = UIView()
+            opacityView.frame = view.frame
+            opacityView.backgroundColor = UIColor(white: 0.1, alpha: 0.3)
+            opacityView.tag = 50
+            
+            //initialize activity loading
+            activityIndicator.center = view.center
+            activityIndicator.hidesWhenStopped = true
+            activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+            
+            view.addSubview(activityIndicator)
+            view.addSubview(opacityView)
+            
+            activityIndicator.startAnimating()
+            UIApplication.shared.beginIgnoringInteractionEvents()
+        }else{
+            activityIndicator.startAnimating()
+            UIApplication.shared.endIgnoringInteractionEvents()
+        }
+    }
+    
 }

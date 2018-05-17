@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 import FBSDKCoreKit
-
+import UserNotifications
 import PushKit
 
 var TimeModCheck = Timer()
@@ -27,7 +27,7 @@ var linephoneInit = "" {
 }
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate, PKPushRegistryDelegate {
 
     var window: UIWindow?
 
@@ -35,7 +35,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         
-        //registerForPushNotification()
+        UNUserNotificationCenter.current().delegate = self
+        registerForPushNotification()
         // FB init
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
       
@@ -47,6 +48,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.Dashboard()
         }
         // Override point for customization after application launch.
+        
+        //config pushkit
+        self.registerPushKit()
         return true
     }
     
@@ -56,43 +60,74 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return handled
     }
-//    func registerForPushNotification(){
-//        
-//        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
-//            print("Permission granted \(granted)")
-//            
-//            guard granted else {return}
-//            self.getNotificationSetting()
-//        }
-//        
-//    }
-//    func getNotificationSetting(){
-//        
-//        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
-//            print("Notification settings \(settings)")
-//            guard settings.authorizationStatus == .authorized else {return}
-//            UIApplication.shared.registerForRemoteNotifications()
-//        }
-//        
-//    }
-//    
-//    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-//        
-//        let tokenPart = deviceToken.map {
-//            data -> String in
-//            return String(format: "%02.2hhx", data)
-//        }
-//        
-//        let token = tokenPart.joined()
-//        print("Device token \(token)")
-//        
-//        
-//        
-//    }
-//    
-//    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-//        print("Failed to register \(error)")
-//    }
+    func registerForPushNotification(){
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+            print("Permission granted \(granted)")
+            
+            guard granted else {return}
+            self.getNotificationSetting()
+        }
+        
+    }
+    func getNotificationSetting(){
+        
+        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
+            print("Notification settings \(settings)")
+            guard settings.authorizationStatus == .authorized else {return}
+            UIApplication.shared.registerForRemoteNotifications()
+        }
+        
+    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        
+        let tokenPart = deviceToken.map {
+            data -> String in
+            return String(format: "%02.2hhx", data)
+        }
+        
+        let token = tokenPart.joined()
+        print("Device token \(token)")
+        
+        
+        
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("Failed to register \(error)")
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound])
+    }
+    
+    func registerPushKit(){
+        let mainQueue = DispatchQueue.main
+        if #available(iOS 8.0, *){
+            let voipRegistry: PKPushRegistry = PKPushRegistry(queue: mainQueue)
+            voipRegistry.delegate = self as PKPushRegistryDelegate
+            voipRegistry.desiredPushTypes = [PKPushType.voIP]
+        }else{
+            let voipRegistry = PKPushRegistry(queue: nil)
+            voipRegistry.delegate = self as PKPushRegistryDelegate
+            voipRegistry.desiredPushTypes = [PKPushType.voIP]
+        }
+        
+    }
+    
+    @available(iOS 8.0, *)
+    func pushRegistry(_ registry: PKPushRegistry, didUpdate pushCredentials: PKPushCredentials, for type: PKPushType) {
+        //register VoIP push token to server
+        NSLog("VOIP TOKEN: \(pushCredentials.token)" )
+        
+    }
+    func pushRegistry(_ registry: PKPushRegistry, didReceiveIncomingPushWith payload: PKPushPayload, for type: PKPushType) {
+        if UIApplication.shared.applicationState == UIApplicationState.background {
+             NotificationController.presentNotification(title: "App Terminated", body: "We are trying to send you a notification",time: 2.00)
+        }
+        NSLog("incoming voip notification \(payload.dictionaryPayload)")
+    }
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
@@ -113,6 +148,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+       
     }
     func Dashboard(){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate

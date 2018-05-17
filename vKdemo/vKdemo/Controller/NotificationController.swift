@@ -7,15 +7,27 @@
 //
 
 import UIKit
+import UserNotifications
 
 class NotificationController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
     }
     
+    static func presentNotification(title: String, body: String, time: Double){
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.body = body
+        content.sound = UNNotificationSound.default()
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: time, repeats: false)
+        let request = UNNotificationRequest(identifier: "alertSth", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

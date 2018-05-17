@@ -70,10 +70,7 @@ class PropertyController: UIViewController {
         super.viewDidLoad()
         
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        print("FUCKING AWESOME")
-    }
+  
     
 }
 

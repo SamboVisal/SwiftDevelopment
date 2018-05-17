@@ -39,7 +39,7 @@ class MapController: UIViewController, GMSMapViewDelegate, CLLocationManagerDele
         kiriromLocation(title: "Activity Center", location: CLLocationCoordinate2DMake(11.3165,104.0648),dec: "Information regarding various types of fun activities to refresh your mind. Open 8:00am - 5pm", zoom: 14),
         
         kiriromLocation(title: "Pine View Kitchen", location: CLLocationCoordinate2DMake(11.3167,104.0653),dec: "An open space restaurant where you can enjoy modern Khmer cuisine", zoom: 14)
-        
+    
         
     ]
     override func viewDidLoad() {

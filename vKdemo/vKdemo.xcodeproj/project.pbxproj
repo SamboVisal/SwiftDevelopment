@@ -131,6 +131,7 @@
 		F60E2E432058E473000E96FA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F60E2E442058E490000E96FA /* Helpers */,
 				F6A375682056296300EB4BD2 /* ViewController.swift */,
 				F62DE0542057731B0068D2A8 /* ResetPasswordViewController.swift */,
 				F69F166520573EE00070521C /* RegisterViewController.swift */,
@@ -184,7 +185,6 @@
 				F612D8FD205983F4006DE104 /* FBSDKLoginKit.framework */,
 				F612D8F3205918A0006DE104 /* SWRevealViewController.h */,
 				F612D8F4205918A0006DE104 /* SWRevealViewController.m */,
-				F60E2E442058E490000E96FA /* Helpers */,
 				F60E2E432058E473000E96FA /* Controller */,
 				F6A3757820562D2B00EB4BD2 /* Util */,
 				F6A375662056296300EB4BD2 /* AppDelegate.swift */,
@@ -251,7 +251,7 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
-								enabled = 0;
+								enabled = 1;
 							};
 							com.apple.Maps.iOS = {
 								enabled = 0;

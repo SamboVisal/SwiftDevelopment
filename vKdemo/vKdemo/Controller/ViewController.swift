@@ -23,7 +23,7 @@ class ViewController: UIViewController , FBSDKLoginButtonDelegate{
         button.readPermissions = ["email"]
         return button
     }()
-    let customToken = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGFpbXMiOnsicHJlbWl1bUFjY291bnQiOnRydWV9LCJ1aWQiOiJhNlF6dUhWSDdBWDZybEQ0Sk5BRll5YU1zV0IzIiwiaWF0IjoxNTIyMzM4ODg3LCJleHAiOjE1MjIzNDI0ODcsImF1ZCI6Imh0dHBzOi8vaWRlbnRpdHl0b29sa2l0Lmdvb2dsZWFwaXMuY29tL2dvb2dsZS5pZGVudGl0eS5pZGVudGl0eXRvb2xraXQudjEuSWRlbnRpdHlUb29sa2l0IiwiaXNzIjoiZmlyZWJhc2UtYWRtaW5zZGstbHNkZTFAdmthcHAtNmFjMzQuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJzdWIiOiJmaXJlYmFzZS1hZG1pbnNkay1sc2RlMUB2a2FwcC02YWMzNC5pYW0uZ3NlcnZpY2VhY2NvdW50LmNvbSJ9.MPGxFB5Wgp40t8Tw1JCFsz-jUZKC-ZozDro0cI5ukEF80WzcbTClQtEA1JoaqES663jH1xUapQirO-eRtvGxIRMPLBVwp3DLVbtQiE0NGgDPkPDUXUFj30clodgxfINvzvVPmxf37g6L-pVfCTcxrtGr3LUrrQ_o2cgOtegT-2zkc8zFR1OjDcY0SzTx5pp6Gsz_5eEtxchQ_zhk5yCiQac-3vOkoDpPtFmbu70f2f_8QkZJTupJP2fo3zBjtv1yEx3YprneGo7Q4BzFo6YVnORVlkf8-5ExOW346hUCPu-rwAKYPxL5NWnog2IePrICaww_PwzeHGoeuS4xJ004bA";
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -40,7 +40,7 @@ class ViewController: UIViewController , FBSDKLoginButtonDelegate{
         }catch{
             print("Error while signing out!")
         }
-        
+        self.hideKeyboardWhenTypeAround()
        
         
     }
@@ -66,7 +66,7 @@ class ViewController: UIViewController , FBSDKLoginButtonDelegate{
                 print("Error",Error ?? "")
                 return
             }
-            
+            UIComponentController.presentActivityIndicator(view: self.view, option: true)
             print("Success login ",User ?? "")
         }
         FBSDKGraphRequest(graphPath: "/me",parameters: ["fields":"id,name,email"]).start { (connection, user, error) in
@@ -112,14 +112,7 @@ class ViewController: UIViewController , FBSDKLoginButtonDelegate{
             if err != nil {
             
             }
-            print("user id ", User?.uid)
-            print("User email ", User?.email)
-            let currentUser = Auth.auth().currentUser
-            if currentUser != nil  {
-                currentUser?.getIDToken(completion: { (User, err) in
-                    print("Token ",User ?? ""," great")
-                })
-            }
+            
             
             
         }
@@ -128,7 +121,7 @@ class ViewController: UIViewController , FBSDKLoginButtonDelegate{
         
         var title = "unable to login"
         var message = "please verify token id"
-        if let user = user {
+        if user != nil {
             title = "login"
             message = "done bro"
         }

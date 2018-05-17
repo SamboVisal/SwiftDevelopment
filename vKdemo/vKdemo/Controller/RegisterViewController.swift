@@ -20,14 +20,11 @@ class RegisterViewController: UIViewController,UITextFieldDelegate {
     public var activityIndicator = UIActivityIndicatorView()
     override func viewDidLoad() {
         super.viewDidLoad()
-        activityIndicator.center = self.view.center
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.activityIndicatorViewStyle = .gray
-        
-        
+    
         testView.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
         testView.alpha=0.5
         
+        self.hideKeyboardWhenTypeAround()
         
         userName.delegate = self
         Email.delegate = self
@@ -74,6 +71,7 @@ class RegisterViewController: UIViewController,UITextFieldDelegate {
         let pass1 = Password1.text
         let confirmPass = Password2.text
         let length_pass = pass1?.count
+        
         if (userNameInput?.isEmpty)! || (emailInput?.isEmpty)! || (pass1?.isEmpty)! || (confirmPass?.isEmpty)! {
             alertMessage(title: "Warning", msg: "All fields cannot empty")
         }
@@ -93,9 +91,8 @@ class RegisterViewController: UIViewController,UITextFieldDelegate {
                 print(error ?? "")
                 return
             }else{
-                self.view.addSubview(self.testView)
-                UIApplication.shared.beginIgnoringInteractionEvents()
-                self.activityIndicator.startAnimating()
+               
+                
                 let DashController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainDashboard") as! SWRevealViewController
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
                 appDelegate.window?.rootViewController = DashController
