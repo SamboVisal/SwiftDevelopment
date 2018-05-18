@@ -1,0 +1,35 @@
+{
+    "images" : [
+                       
+                       {
+                       "Title" : "Emma Watson",
+                       "Intro" : "Emma Charlotte Duerre Watson is a British actress, model, and activist. Born in Paris and brought up in Oxfordshire, Watson attended the Dragon School and trained as an actress at the Oxford branch of Stagecoach Theatre Arts.",
+                       "Photo" : "emmawatson",
+                       "url"   : "http://cdn.gq.com.mx/uploads/images/thumbs/mx/gq/2/s/2016/01/la_belleza_de_emma_watson__643653211_1127x1490.jpg"
+                       },
+                       {
+                       "Title" : "Emma Stone",
+                       "Intro" : "Emily Jean Stone is an American actress. The recipient of such accolades as an Academy Award, a BAFTA Award, and a Golden Globe, she is the highest-paid actress in the world.",
+                       "Photo" : "emmastone",
+                       "url"   : "https://www3.pictures.zimbio.com/gi/Arrivals+Golden+Globe+Awards+Part+2+WLvKkuOhi7nl.jpg"
+                       
+                       },
+                       {
+                       "Title" : "Emma Stone and Emma Watson",
+                       "Intro" : "Both are damn cute.",
+                       
+                       "Photo" : "stonewatson",
+                       "url"   : "http://cdn.playbuzz.com/cdn/5862ad6e-8efb-491c-a174-c4601c48ce84/5261309d-b3d1-4406-9e34-fecfb65b8c5c.jpg"
+                       
+                       },
+                       {
+                       "Title" : "Taylor Swift",
+                       "Intro" : "Taylor Alison Swift is an American singer-songwriter. One of the leading contemporary recording artists, she is known for narrative songs about her personal life, which have received widespread media coverage.",
+                       
+                       "Photo" : "taylor-swift",
+                       "url"   : "https://timedotcom.files.wordpress.com/2014/11/taylor-swift.jpg"
+                       
+                       }
+                       
+                    ]
+}
