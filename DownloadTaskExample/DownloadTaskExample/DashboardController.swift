@@ -28,7 +28,7 @@ class DashboardController: UIViewController {
     }
     @IBAction func fileOpen(_ sender: Any) {
         
-        if let path = Bundle.main.path(forResource: "swift_tutorial", ofType: "pdf"){
+        if let path = Bundle.main.path(forResource: "swifts_tutorial", ofType: "pdf"){
             urlTarget = URL(fileURLWithPath: path)
             fileName = "swift_tutorial.pdf"
             isWebView = "true"
@@ -97,7 +97,6 @@ class FileWebViewController: UIViewController, UIWebViewDelegate, UIDocumentInte
         destinationUrl = URL(fileURLWithPath: destinationPath)
         print("DESTINATION PATH \(destinationUrl)")
         print("URL TARGET \(urlTarget)")
-        
         do{
             try FileManager.default.copyItem(at: urlTarget, to: destinationUrl)
         }

@@ -93,6 +93,7 @@ class DownloadManager : NSObject, URLSessionDelegate, URLSessionDownloadDelegate
                 if FileManager.default.fileExists(atPath: pdfFileURL.path) {
                     print("pdfFileURL present!") // Confirm that the file is here!
                     locationDownload = pdfFileURL.absoluteURL
+                    FileQuickLookController().copyFile()
                     //FileManager.default.removeItem(atPath: pdfFileURL.path)
                 }
             })
