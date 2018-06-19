@@ -22,6 +22,7 @@ class ViewController: UIViewController , UIDocumentInteractionControllerDelegate
         let _ = DownloadManager.shared.activate()
         documentInteractionController.delegate = self
         authorizedPhoto()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelDownload))
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,6 +38,12 @@ class ViewController: UIViewController , UIDocumentInteractionControllerDelegate
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         DownloadManager.shared.onProgress = nil
+    }
+    func cancelDownload(){
+        print("Download being cancel")
+        //Task.cancel()
+        self.performSegue(withIdentifier: "cancelDownloadSegue", sender: self)
+        
     }
     
     func authorizedPhoto(){
@@ -78,6 +85,9 @@ class ViewController: UIViewController , UIDocumentInteractionControllerDelegate
             print("cannot open ui")
         }
     }
+    func documentInteractionController(_ controller: UIDocumentInteractionController, willBeginSendingToApplication application: String?) {
+        isSendToApplication = true
+    }
     func documentInteractionController(_ controller: UIDocumentInteractionController, didEndSendingToApplication application: String?) {
         isSendToApplication = true
         print("your url is \(locationDownload)")
@@ -85,7 +95,9 @@ class ViewController: UIViewController , UIDocumentInteractionControllerDelegate
         removeFile(url: locationDownload)
         
     }
-    
+    func documentInteractionControllerDidDismissOpenInMenu(_ controller: UIDocumentInteractionController) {
+        removeFile(url: locationDownload)
+    }
     func removeFile(url: URL){
         if FileManager.default.fileExists(atPath: url.path){
             do{
@@ -101,8 +113,8 @@ class ViewController: UIViewController , UIDocumentInteractionControllerDelegate
     }
     @IBAction func startDownload(_ sender: Any) {
         let url = URL(string: "http://www.tutorialspoint.com/swift/swift_tutorial.pdf")!
-        let task = DownloadManager.shared.activate().downloadTask(with: url)
-        task.resume()
+        Task = DownloadManager.shared.activate().downloadTask(with: url)
+        Task.resume()
         
     }
     static func downloadFile(url: URL){
@@ -117,5 +129,7 @@ class ViewController: UIViewController , UIDocumentInteractionControllerDelegate
     func documentInteractionControllerWillBeginPreview(_ controller: UIDocumentInteractionController) {
         print("Will begin to be previewed")
     }
+    
+    
 }
 

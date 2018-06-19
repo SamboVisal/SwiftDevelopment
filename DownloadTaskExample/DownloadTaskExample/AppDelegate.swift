@@ -9,12 +9,22 @@
 import UIKit
 var locationDownload: URL!
 var taskComplete: Bool = false
+var Task: URLSessionDownloadTask!
+var fileQuickLookController: FileQuickLookController?
+var isDownloadQuicklook: Bool = false
+var file: [fileDownload] = []
+var createSession: Bool! = true
+var alreadyCreatedSession: Bool! = false
+var SESSION: URLSession!
+var DOWNLOADFILENAME: String!
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var backgroundSessionCompletionHandler: (() -> Void)?
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
