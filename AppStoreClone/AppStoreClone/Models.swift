@@ -55,7 +55,7 @@ class AppCategory: NSObject {
         frozenApp.Price = NSNumber(floatLiteral: 3.99)
         apps.append(frozenApp)
         
-        apps.append(frozenApp)
+        
         bestAppCategories.apps = apps
         
         //print("Best app categories \(bestAppCategories.apps?.count)")
@@ -68,7 +68,7 @@ class AppCategory: NSObject {
         telepatinApp.Category = "Game"
         telepatinApp.Price = NSNumber(floatLiteral: 2.99)
         bestGameApps.append(telepatinApp)
-        bestGameCategories.apps = bestGameApps
+        //bestGameCategories.apps = bestGameApps
         
         let bestRecommandationCategory = AppCategory()
         bestRecommandationCategory.name = "Recommendation"
@@ -79,7 +79,7 @@ class AppCategory: NSObject {
         recommandApp.Category = "App"
         recommandApp.Price = NSNumber(floatLiteral: 1.99)
         bestRecommandApp.append(recommandApp)
-        
+        bestRecommandApp.append(recommandApp)
         bestRecommandationCategory.apps = bestRecommandApp
         
         

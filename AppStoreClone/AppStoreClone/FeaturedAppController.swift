@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FeaturedAppController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class FeaturedAppController:  UICollectionViewController, UICollectionViewDelegateFlowLayout{
 
     
     private let cellId = "cellId"
@@ -20,12 +20,13 @@ class FeaturedAppController: UICollectionViewController, UICollectionViewDelegat
         super.viewDidLoad()
         appCategory = AppCategory.sampleAppCategories()
         setNavigation()
-        AppCategory.featuredApp()
+        //AppCategory.featuredApp()
         
         collectionView?.backgroundColor = UIColor.white
         collectionView?.register(CategoryCell.self, forCellWithReuseIdentifier: cellId)
         
     }
+    
     func setNavigation(){
         let textAttributes = [NSAttributedStringKey.foregroundColor:UIColor.green]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
@@ -56,4 +57,5 @@ class FeaturedAppController: UICollectionViewController, UICollectionViewDelegat
     }
 
 }
+
 

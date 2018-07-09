@@ -53,6 +53,7 @@ class CategoryCell: UICollectionViewCell, UICollectionViewDataSource, UICollecti
         return view
     }()
     func setupView(){
+        
         backgroundColor = UIColor.clear
         //this will add subview to main view of number items section
         addSubview(appCollectionView)
